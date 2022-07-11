@@ -60,18 +60,14 @@
 (setq org-agenda-custom-commands
       '(("a" "Agenda"
          ((agenda "")
-          (todo "WAIT")))))
+          (todo "NEXT")
+          (todo "WAIT")
+          (tags-todo "+PRIORITY=\"A\"")))))
 
+;; Set custom keywords for todo selection - not working
 (setq org-todo-keywords
-      '((sequence "TODO" "NEXT" "IDEA" "HOLD" | "DONE" "CANCELLED")))
+      '((sequence "TODO(t)" "NEXT(n)" "WAIT(w@/!)" "HOLD(h!)" "|" "DONE(d!)" "CANCELLED(c@)")))
 
-;; Hide Scheduled tasks and taks with a Deadline in the Org Agenda
-;; (setq org-agenda-todo-ignore-deadlines)
-;; (setq org-agenda-todo-ignore-scheduled)
-
-;;Hides Schedule and Deadline tasks if DONE
-;; (setq org-agenda-skip-scheduled-if-done)
-;; (setq org-agenda-skip-deadline-if-done)
 
 (setq org-tag-alist
       '(("@home" . ?h)
@@ -79,4 +75,5 @@
         ("@computer" . ?c)
         ("@homedepot" . ?d)
         ("@walmart" . ?w)
-        ("@amazon" . ?a)))
+        ("@amazon" . ?a)
+        ("idea" . ?i)))
